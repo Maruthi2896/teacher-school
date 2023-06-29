@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Provide from "./context/provide";
+import Navbar from "./components/Navbar";
+import Developer from "./components/developer";
+import Teachers from "./components/Teachers";
+import Students from "./components/students";
+import Batches from "./components/batches";
+import EditTeacher from "./components/TeachersEdit";
+import EditStudent from "./components/StudentsEdit";
+import AddStudent from "./components/addStudent";
+import AddTeacher from "./components/addTeacher";
+import AddBatch from "./components/addBatch";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Provide>
+          <Navbar />
+
+          <Routes>
+            <Route path="/developer" element={<Developer />} />
+            <Route path="/teachers" element={<Teachers />} />
+            <Route path="/students" element={<Students />} />
+            <Route path="/batches" element={<Batches />} />
+            <Route path="/add-batch" element={<AddBatch />} />
+            <Route path="/edit-teachers/:id" element={<EditTeacher />} />
+            <Route path="/edit-students/:id" element={<EditStudent />} />
+            <Route path="/add-students" element={<AddStudent />} />
+            <Route path="/add-teacher" element={<AddTeacher />} />
+          </Routes>
+        </Provide>
+      </BrowserRouter>
     </div>
   );
 }
