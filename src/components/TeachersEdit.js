@@ -32,7 +32,7 @@ function EditTeacher() {
     });
   };
   useEffect(() => {
-    fetch(`http://localhost:7100/teachers/${id}`, {
+    fetch(`https://server-school-teacher.onrender.com/teachers/${id}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -51,17 +51,22 @@ function EditTeacher() {
   };
   const Submitt = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:7100/teacher-edit/${id}`, data).then(() =>
-      setData({
-        name: "",
-        img: "",
-        salary: "",
-        date_of_join: "",
-        native_place: "",
-        subject: "",
-        batch: "",
-      })
-    );
+    axios
+      .put(
+        `https://server-school-teacher.onrender.com/teacher-edit/${id}`,
+        data
+      )
+      .then(() =>
+        setData({
+          name: "",
+          img: "",
+          salary: "",
+          date_of_join: "",
+          native_place: "",
+          subject: "",
+          batch: "",
+        })
+      );
   };
   return (
     <div>

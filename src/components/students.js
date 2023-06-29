@@ -8,14 +8,16 @@ function Students() {
 
   const Delette = async (id) => {
     await axios
-      .delete(`http://localhost:7100/students/delete/${id}`)
+      .delete(
+        `https://server-school-teacher.onrender.com/students/delete/${id}`
+      )
       .then((res) => {
         console.log(res);
       })
       .catch((error) => console.log(error));
   };
   useEffect(() => {
-    fetch(`http://localhost:7100/students`, {
+    fetch(`https://server-school-teacher.onrender.com/students`, {
       method: "GET",
     })
       .then((res) => res.json())

@@ -33,12 +33,14 @@ function AddBatch() {
   const Delette = () => {};
   const Submitt = (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:7100/add-batch`, data).then(() =>
-      setData({
-        name: "",
-        type: "",
-      })
-    );
+    axios
+      .post(`https://server-school-teacher.onrender.com/add-batch`, data)
+      .then(() =>
+        setData({
+          name: "",
+          type: "",
+        })
+      );
   };
   return (
     <div>

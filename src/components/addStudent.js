@@ -36,16 +36,18 @@ function AddStudent() {
   };
   const Submitt = (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:7100/add-students`, data).then(() =>
-      setData({
-        name: "",
-        img: "",
-        about: "",
-        role: "",
-        company: "",
-        address: "",
-      })
-    );
+    axios
+      .post(`https://server-school-teacher.onrender.com/add-students`, data)
+      .then(() =>
+        setData({
+          name: "",
+          img: "",
+          about: "",
+          role: "",
+          company: "",
+          address: "",
+        })
+      );
   };
   return (
     <div>

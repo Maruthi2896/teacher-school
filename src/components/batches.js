@@ -15,14 +15,14 @@ function Batches() {
   const Delette = async (id) => {
     console.log(id);
     await axios
-      .delete(`http://localhost:7100/batches/delete/${id}`)
+      .delete(`https://server-school-teacher.onrender.com/batches/delete/${id}`)
       .then((res) => {
         console.log(res);
       })
       .catch((error) => console.log(error));
   };
   useEffect(() => {
-    fetch("http://localhost:7100/students", {
+    fetch("https://server-school-teacher.onrender.com/students", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -30,7 +30,7 @@ function Batches() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:7100/teachers", {
+    fetch("https://server-school-teacher.onrender.com/teachers", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -38,7 +38,7 @@ function Batches() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:7100/batches", {
+    fetch("https://server-school-teacher.onrender.com/batches", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -151,7 +151,11 @@ function Batches() {
                 margin: "0px 10px 0px 0px",
               }}
             >
-              <Button size="small" color="error" onClick={() => Delette(e.name)}>
+              <Button
+                size="small"
+                color="error"
+                onClick={() => Delette(e.name)}
+              >
                 <NavLink to="/batches" style={{ textDecoration: "none" }}>
                   Delete Batch
                 </NavLink>

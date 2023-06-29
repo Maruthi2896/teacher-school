@@ -44,17 +44,19 @@ function AddTeacher() {
   };
   const Submitt = (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:7100/add-teacher`, data).then(() =>
-      setData({
-        name: "",
-        img: "",
-        salary: "",
-        date_of_join: "",
-        native_place: "",
-        subject: "",
-        batch: "",
-      })
-    );
+    axios
+      .post(`https://server-school-teacher.onrender.com/add-teacher`, data)
+      .then(() =>
+        setData({
+          name: "",
+          img: "",
+          salary: "",
+          date_of_join: "",
+          native_place: "",
+          subject: "",
+          batch: "",
+        })
+      );
   };
   return (
     <div>

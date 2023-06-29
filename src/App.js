@@ -12,6 +12,7 @@ import EditStudent from "./components/StudentsEdit";
 import AddStudent from "./components/addStudent";
 import AddTeacher from "./components/addTeacher";
 import AddBatch from "./components/addBatch";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
 
           <Routes>
             <Route path="/developer" element={<Developer />} />
+            <Route path="/" element={<Home />} />
             <Route path="/teachers" element={<Teachers />} />
             <Route path="/students" element={<Students />} />
             <Route path="/batches" element={<Batches />} />

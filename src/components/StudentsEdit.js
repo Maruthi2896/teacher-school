@@ -25,7 +25,7 @@ function EditStudent() {
     });
   };
   useEffect(() => {
-    fetch(`http://localhost:7100/students/${id}`, {
+    fetch(`https://server-school-teacher.onrender.com/students/${id}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -43,16 +43,21 @@ function EditStudent() {
   };
   const Submitt = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:7100/edited-students/${id}`, data).then(() =>
-      setData({
-        name: "",
-        img: "",
-        about: "",
-        role: "",
-        company: "",
-        address: "",
-      })
-    );
+    axios
+      .put(
+        `https://server-school-teacher.onrender.com/edited-students/${id}`,
+        data
+      )
+      .then(() =>
+        setData({
+          name: "",
+          img: "",
+          about: "",
+          role: "",
+          company: "",
+          address: "",
+        })
+      );
   };
   return (
     <div>

@@ -13,7 +13,9 @@ function Teachers() {
 
   const Delette = async (id) => {
     await axios
-      .delete(`http://localhost:7100/teachers/delete/${id}`)
+      .delete(
+        `https://server-school-teacher.onrender.com/teachers/delete/${id}`
+      )
       .then((res) => {
         console.log(res);
       })
@@ -21,7 +23,7 @@ function Teachers() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:7100/teachers", {
+    fetch("https://server-school-teacher.onrender.com/teachers", {
       method: "GET",
     })
       .then((res) => res.json())
